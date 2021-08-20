@@ -21,6 +21,6 @@ app.use('/api',router);
 const URL = `mongodb+srv://deep:deep@stackoverflow.lfqso.mongodb.net/stackoverflow?retryWrites=true&w=majority`;
 db(URL);
 
-app.listen(4000,() => {
+app.listen(2000,() => {
     console.log('server is up and running on port 5000');
 })

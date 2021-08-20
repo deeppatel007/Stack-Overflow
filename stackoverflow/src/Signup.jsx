@@ -1,48 +1,42 @@
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import { FiLogIn } from 'react-icons/fi'
-
+import {authenticateSignup} from './servise/service'
 import {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 
 
 
 const signupInitialValues = {
-    fullname: '',
     username: '',
     password: '',
-    phone: '',
     email: '',
-    shopname: '',
-    shopaddress: '',
-    district: '',
-    pincode: '',
-    features: ''
+    
 };
 
 
 const Signup = () => {
 
-    // const [signup, setSignup] = useState(signupInitialValues);
+    const [signup, setSignup] = useState(signupInitialValues);
 
-    // const onInputChange = (e) => {
-    //     setSignup({ ...signup, [e.target.name]: e.target.value });
-    // }
+    const onInputChange = (e) => {
+        setSignup({ ...signup, [e.target.name]: e.target.value });
+    }
 
-    // const history = useHistory();
+    const history = useHistory();
     
-    // const clickHandler = async () => {
-    //     // alert(login);
-    //     let response = await authenticateSignup(signup);
-    //     // alert(response);
-    //     if(!response) {
-    //         alert("invalid signup");
-    //         setSignup({ ...signup, password: ''});
-    //         return;
-    //     }
-    //     alert("signup successfully");
-    //     setSignup(signupInitialValues);
-    //     history.push("/login");
-    // }
+    const clickHandler = async () => {
+        // alert(login);
+        let response = await authenticateSignup(signup);
+        // alert(response);
+        if(!response) {
+            alert("invalid signup");
+            setSignup({ ...signup, password: ''});
+            return;
+        }
+        alert("signup successfully");
+        setSignup(signupInitialValues);
+        history.push("/login");
+    }
 
     return (
         <div style={{ display: 'block', 
@@ -62,7 +56,7 @@ const Signup = () => {
                         <Form.Label style={{fontSize: 20, color: '#ffffff'}}>
                             <span>User Name</span>
                         </Form.Label>
-                        <Form.Control   name="username" type="text" placeholder="Enter User Name"/>
+                        <Form.Control  onChange={(e) => onInputChange(e)} value={signup.username} name="username" type="text" placeholder="Enter User Name"/>
                     </Form.Group>
                 </Row>
                 <Row>
@@ -70,7 +64,7 @@ const Signup = () => {
                         <Form.Label style={{fontSize: 20, color: '#ffffff'}}>
                             <span>Password</span>
                         </Form.Label> 
-                        <Form.Control   name="password" type="password" placeholder="Enter Password"/>
+                        <Form.Control onChange={(e) => onInputChange(e)} value={signup.password}  name="password" type="password" placeholder="Enter Password"/>
                     </Form.Group>
                 </Row>
                 <Row>
@@ -78,10 +72,10 @@ const Signup = () => {
                     <Form.Label style={{fontSize: 20, color: '#ffffff'}}>
                         <span>Email</span>
                     </Form.Label>
-                    <Form.Control   name="email" type="text" placeholder="Enter Email Address"/>
+                    <Form.Control onChange={(e) => onInputChange(e)} value={signup.email}   name="email" type="text" placeholder="Enter Email Address"/>
                 </Form.Group>
                 </Row>
-                <Button size="lg" variant="success"  style={{marginLeft: '45%', marginTop: 20}}>
+                <Button size="lg" variant="success"  onClick={() => clickHandler()} style={{marginLeft: '45%', marginTop: 20}}>
                     SignUp
                 </Button>
                 
