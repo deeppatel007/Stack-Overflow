@@ -76,7 +76,17 @@ router.get('/question/search', async (req,res,err) => {
         return res.json('medicine not found');
     }
 })
-
+router.get('/answer/search', async (req,res,err) => {
+    const exist = await AddAns.find(req.query);
+    console.log(exist);
+    if(exist){
+        console.log(exist);
+        return res.json(exist);
+    }
+    else{
+        return res.json('medicine not found');
+    }
+})
 
 
 

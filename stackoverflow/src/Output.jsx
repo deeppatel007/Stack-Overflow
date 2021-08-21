@@ -5,6 +5,7 @@ import axios from 'axios';
 import Alert from './Alert';
 import {LoginContext} from './controller/LoginState';
 import AddAns from '../src/AddAns';
+import Answer from './Answer';
 
 const url = 'http://localhost:2000/api';
 
@@ -84,7 +85,7 @@ const Output = () => {
             {
                 (clickdone === "seeanswer")?
                 <div>
-                    
+                <Answer questionid = {clickquestionid._id} />
                 </div>
                 : 
                 <div>

@@ -6,7 +6,7 @@ import AddQuestion from './AddQuestion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Output from "./Output";
 import AddAns from "./AddAns";
-
+import Answer from "./Answer";
 import Signup from "./Signup";
 import  LoginState from './controller/LoginState';
 function App() {
@@ -21,6 +21,7 @@ function App() {
           <Route exact path='/Login' component={Login} />
           <Route exact path='/AddQuestion' component={AddQuestion} />
           <Route exact path='/AddAns' component={AddAns} />
+          <Route exact path='/Answer' component={Answer} />
           {/* <Route exact path='/Upload' component={Upload} /> */}
         </Switch>
       </BrowserRouter>
