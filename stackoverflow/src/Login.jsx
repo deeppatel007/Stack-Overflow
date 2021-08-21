@@ -2,7 +2,7 @@ import { Form, Col, Button } from 'react-bootstrap';
 import { FiLogIn } from 'react-icons/fi'
 import { useState , useContext} from 'react';
 import {useHistory} from 'react-router-dom'
-import { LoginContext } from '../src/controller/loginstate'
+import { LoginContext } from './controller/LoginState'
 import { authenticateLogin } from './servise/service.js'
 const loginInitialValues = {
     username: '',

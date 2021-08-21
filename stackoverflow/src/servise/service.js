@@ -12,6 +12,7 @@ export const authenticateSignup = async (user) => {
     }
 }
 
+
 export const authenticateLogin = async (user) => {
     try {
         return await axios.post(`${url}/login`, user);
@@ -21,18 +22,12 @@ export const authenticateLogin = async (user) => {
     }
 }
 
-
-
-
-
-
-
 export const userfind = async (user) => {
     try{
         return await axios.get(`${url}/user/search`, user)
     }
     catch(error) {
-        console.log('Error while calling user for shop address', error);
+        console.log('Error while calling', error);
     }
 }
 export const questionAdder = async(question) => {
@@ -40,7 +35,15 @@ export const questionAdder = async(question) => {
         return await axios.post(`${url}/AddQuestion`, question);
     }
     catch(error) {
-        console.log('Error while calling medicine adder api', error);
+        console.log('Error while calling question adder api', error);
+    }
+}
+export const answerAdder = async(answer) => {
+    try {
+        return await axios.post(`${url}/AddAns`, answer);
+    }
+    catch(error) {
+        console.log('Error while calling question adder api', error);
     }
 }
 //hello

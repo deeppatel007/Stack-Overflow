@@ -5,11 +5,12 @@ import {useState} from 'react';
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { questionAdder } from './servise/service.js';
-import { LoginContext } from './controller/loginstate';
+import {LoginContext} from './controller/LoginState.jsx';
+import {LoginState} from './controller/LoginState';
 
 const AddQuestion = () => {
 
-    const {account, setAccount} = useContext(LoginContext);
+    const {account,setAccount} = useContext(LoginContext);
 
     const questionInitialValues = {
         tag: '',

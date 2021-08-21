@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import {IoMdPower} from 'react-icons/io';
 import {FaRegHandPeace} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
-import { LoginContext } from './controller/loginstate';
+import { LoginContext } from './controller/LoginState';
 import { useHistory } from 'react-router-dom';
 
 const Header = () => {
