@@ -28,7 +28,7 @@ console.log(questionid);
 
     const history = useHistory();
     
-    const clickHandler = async (ans) => {
+    const clickHandler = async () => {
         console.log(ans);
         let response = await answerAdder(ans);
         if(!response) {

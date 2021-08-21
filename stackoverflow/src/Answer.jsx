@@ -9,7 +9,8 @@ import { Alert } from 'react-bootstrap';
 const url = 'http://localhost:2000/api';
 
 const Answer = (props) => {
-    console.log(props.questionid);
+    // console.log(props.questionid);
+    
     const [ queid, setqueid ] = useState(props.questionid);
     var [ answerdata, setAnswerdata ] = useState([]);
 
