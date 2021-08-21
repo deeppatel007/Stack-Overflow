@@ -46,11 +46,13 @@ npm start
 - Login
 - Add Questions
 - Add Answers
-- See Question and answer on Home page
+- See Question and answer on Output page
 
 ## Usage
 
 - First Signup and than you will be redirected to login.
 - After login the header will show your username and in dropdown menu there is logout option.
+- you can see defferent question thair tags.
 - To add question or also to add answer do login.
+
 
